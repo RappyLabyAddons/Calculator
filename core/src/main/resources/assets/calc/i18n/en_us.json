@@ -1,0 +1,10 @@
+{
+    "example": {
+        "settings": {
+            "name": "Calculator",
+            "enabled": {
+                "name": "Enabled"
+            }
+        }
+    }
+}

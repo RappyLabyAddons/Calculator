@@ -9,13 +9,17 @@ version = "1.0.0"
 
 java.toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
 labyMod {
-    defaultPackageName = "org.example" //change this to your main package name (used by all modules)
+    defaultPackageName = "com.rappytv.calc" //change this to your main package name (used by all modules)
     addonInfo {
-        namespace = "example"
-        displayName = "ExampleAddon"
-        author = "Example Author"
-        description = "Example Description"
+        namespace = "calc"
+        displayName = "Calculator"
+        author = "RappyTV#6969"
+        description = "With this addon you can calculate easy math problems in your minecraft chat."
         minecraftVersion = "*"
         version = System.getenv().getOrDefault("VERSION", "0.0.1")
     }

@@ -5,6 +5,10 @@
             "enabled": {
                 "name": "Enabled"
             }
+        },
+        "messages": {
+            "missingProblem": "You have to provide a problem to solve!",
+            "error": "An error ocurred while trying to solve the problem. Please try again!"
         }
     }
 }

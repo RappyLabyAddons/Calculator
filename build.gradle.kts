@@ -19,9 +19,9 @@ labyMod {
         namespace = "calc"
         displayName = "Calculator"
         author = "RappyTV#6969"
-        description = "With this addon you can calculate easy math problems in your minecraft chat."
+        description = "With this addon you can calculate easy math problems in your minecraft chat. (/calc)"
         minecraftVersion = "*"
-        version = System.getenv().getOrDefault("VERSION", "0.0.1")
+        version = System.getenv().getOrDefault("VERSION", "1.0.0")
     }
 
     minecraft {

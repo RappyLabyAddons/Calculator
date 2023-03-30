@@ -1,0 +1,14 @@
+{
+    "calc": {
+        "settings": {
+            "name": "Taschenrechner",
+            "enabled": {
+                "name": "Aktiviert"
+            }
+        },
+        "messages": {
+            "missingProblem": "Du musst ein Problem zum lösen angeben!",
+            "error": "Ungültiges Problem."
+        }
+    }
+}

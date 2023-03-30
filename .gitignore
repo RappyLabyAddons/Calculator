@@ -55,6 +55,7 @@ fabric.properties
 ### Gradle template
 .gradle
 /**/build/
+.assetsroot
 
 # Ignore Gradle GUI config
 gradle-app.setting

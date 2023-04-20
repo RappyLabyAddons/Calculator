@@ -8,7 +8,7 @@ import net.labymod.api.util.I18n;
 @AddonMain
 public class CalculatorAddon extends LabyAddon<CalculatorAddonConfig> {
 
-    public final static String prefix = "§d§lCalculator §8» §7";
+    public final static String prefix = "§9§lCalculator §8» §7";
 
     @Override
     protected void enable() {

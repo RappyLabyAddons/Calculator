@@ -20,7 +20,7 @@ public class CalculatorCommand extends Command {
     @Override
     public boolean execute(String prefix, String[] arguments) {
         if(arguments.length < 1) {
-            addon.msg(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.missingProblem"));
+            addon.msg("§c" + CalculatorAddon.getTranslation("calc.messages.missingProblem"));
             return true;
         }
         try {
@@ -46,9 +46,9 @@ public class CalculatorCommand extends Command {
                 .replace("sin", "§dsin")
                 .replace("cos", "§dcos")
                 .replace("tan", "§dtan");
-            addon.msg(CalculatorAddon.prefix + problem + " §a= §n" + formatNumber(eval(problem)));
+            addon.msg(problem + " §a= §n" + formatNumber(eval(problem)));
         } catch (NumberFormatException e) {
-            addon.msg(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.error"));
+            addon.msg("§c" + CalculatorAddon.getTranslation("calc.messages.error"));
             e.printStackTrace();
         }
         return true;

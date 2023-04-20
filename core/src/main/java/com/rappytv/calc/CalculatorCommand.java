@@ -20,14 +20,36 @@ public class CalculatorCommand extends Command {
     @Override
     public boolean execute(String prefix, String[] arguments) {
         if(arguments.length < 1) {
-            addon.displayMessage(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.missingProblem"));
+            addon.msg("§c" + CalculatorAddon.getTranslation("calc.messages.missingProblem"));
             return true;
         }
         try {
             String problem = String.join(" ", arguments);
-            addon.displayMessage(CalculatorAddon.prefix + problem + " = " + formatNumber(eval(problem)));
+            String solution = formatNumber(eval(problem));
+            problem = problem
+                .replace("0", "§b0") // Numbers
+                .replace("1", "§b1")
+                .replace("2", "§b2")
+                .replace("3", "§b3")
+                .replace("4", "§b4")
+                .replace("5", "§b5")
+                .replace("6", "§b6")
+                .replace("7", "§b7")
+                .replace("8", "§b8")
+                .replace("9", "§b9")
+                .replace("+", "§c+") // Operators
+                .replace("-", "§c-")
+                .replace("*", "§c*")
+                .replace("/", "§c/")
+                .replace("(", "§7(") // Parenthesis
+                .replace(")", "§7)")
+                .replace("sqrt", "§dsqrt") // Functions
+                .replace("sin", "§dsin")
+                .replace("cos", "§dcos")
+                .replace("tan", "§dtan");
+            addon.msg(problem + " §a= §n" + solution);
         } catch (NumberFormatException e) {
-            addon.displayMessage(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.error"));
+            addon.msg("§c" + CalculatorAddon.getTranslation("calc.messages.error"));
             e.printStackTrace();
         }
         return true;

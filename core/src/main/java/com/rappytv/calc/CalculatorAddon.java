@@ -1,13 +1,14 @@
 package com.rappytv.calc;
 
 import net.labymod.api.addon.LabyAddon;
+import net.labymod.api.client.component.TextComponent;
 import net.labymod.api.models.addon.annotation.AddonMain;
 import net.labymod.api.util.I18n;
 
 @AddonMain
 public class CalculatorAddon extends LabyAddon<CalculatorAddonConfig> {
 
-    public final static String prefix = "§d§lCalculator §8» §7";
+    public final static String prefix = "§9§lCalculator §8» §7";
 
     @Override
     protected void enable() {
@@ -25,5 +26,18 @@ public class CalculatorAddon extends LabyAddon<CalculatorAddonConfig> {
         if(translation == null)
             return key;
         return translation;
+    }
+
+    public void msg(String text) {
+        TextComponent.Builder component = TextComponent.builder();
+        String[] lines = text.split("\n");
+        component.append("§8»\n");
+
+        for(String line : lines) {
+            component.append(prefix + line);
+        }
+
+        component.append("\n§8»");
+        displayMessage(component.build());
     }
 }

@@ -20,14 +20,14 @@ public class CalculatorCommand extends Command {
     @Override
     public boolean execute(String prefix, String[] arguments) {
         if(arguments.length < 1) {
-            addon.displayMessage(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.missingProblem"));
+            addon.msg(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.missingProblem"));
             return true;
         }
         try {
             String problem = String.join(" ", arguments);
-            addon.displayMessage(CalculatorAddon.prefix + problem + " = " + formatNumber(eval(problem)));
+            addon.msg(CalculatorAddon.prefix + problem + " §a= §n" + formatNumber(eval(problem)));
         } catch (NumberFormatException e) {
-            addon.displayMessage(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.error"));
+            addon.msg(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.error"));
             e.printStackTrace();
         }
         return true;

@@ -41,8 +41,8 @@ public class CalculatorCommand extends Command {
                 .replace("-", "§c-")
                 .replace("*", "§c*")
                 .replace("/", "§c/")
-                .replace("(", "§8(") // Parenthesis
-                .replace(")", "§8)")
+                .replace("(", "§7(") // Parenthesis
+                .replace(")", "§7)")
                 .replace("sqrt", "§dsqrt") // Functions
                 .replace("sin", "§dsin")
                 .replace("cos", "§dcos")

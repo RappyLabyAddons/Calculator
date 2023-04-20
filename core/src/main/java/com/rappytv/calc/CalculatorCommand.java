@@ -25,6 +25,7 @@ public class CalculatorCommand extends Command {
         }
         try {
             String problem = String.join(" ", arguments);
+            String solution = formatNumber(eval(problem));
             problem = problem
                 .replace("0", "§b0") // Numbers
                 .replace("1", "§b1")
@@ -46,7 +47,7 @@ public class CalculatorCommand extends Command {
                 .replace("sin", "§dsin")
                 .replace("cos", "§dcos")
                 .replace("tan", "§dtan");
-            addon.msg(problem + " §a= §n" + formatNumber(eval(problem)));
+            addon.msg(problem + " §a= §n" + solution);
         } catch (NumberFormatException e) {
             addon.msg("§c" + CalculatorAddon.getTranslation("calc.messages.error"));
             e.printStackTrace();

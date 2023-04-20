@@ -25,6 +25,27 @@ public class CalculatorCommand extends Command {
         }
         try {
             String problem = String.join(" ", arguments);
+            problem = problem
+                .replace("0", "§b0") // Numbers
+                .replace("1", "§b1")
+                .replace("2", "§b2")
+                .replace("3", "§b3")
+                .replace("4", "§b4")
+                .replace("5", "§b5")
+                .replace("6", "§b6")
+                .replace("7", "§b7")
+                .replace("8", "§b8")
+                .replace("9", "§b9")
+                .replace("+", "§c+") // Operators
+                .replace("-", "§c-")
+                .replace("*", "§c*")
+                .replace("/", "§c/")
+                .replace("(", "§8(") // Parenthesis
+                .replace(")", "§8)")
+                .replace("sqrt", "§dsqrt") // Functions
+                .replace("sin", "§dsin")
+                .replace("cos", "§dcos")
+                .replace("tan", "§dtan");
             addon.msg(CalculatorAddon.prefix + problem + " §a= §n" + formatNumber(eval(problem)));
         } catch (NumberFormatException e) {
             addon.msg(CalculatorAddon.prefix + "§c" + CalculatorAddon.getTranslation("calc.messages.error"));

@@ -4,6 +4,9 @@
             "name": "Taschenrechner",
             "enabled": {
                 "name": "Aktiviert"
+            },
+            "fractionDigits": {
+                "name": "Maximale Kommastellen"
             }
         },
         "messages": {

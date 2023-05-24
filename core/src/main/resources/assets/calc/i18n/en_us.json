@@ -4,6 +4,9 @@
             "name": "Calculator",
             "enabled": {
                 "name": "Enabled"
+            },
+            "fractionDigits": {
+                "name": "Maximum fraction digits"
             }
         },
         "messages": {

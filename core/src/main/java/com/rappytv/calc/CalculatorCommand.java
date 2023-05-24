@@ -2,6 +2,7 @@ package com.rappytv.calc;
 
 import net.labymod.api.client.chat.command.Command;
 import net.labymod.api.configuration.loader.annotation.ConfigName;
+import net.labymod.api.util.I18n;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
@@ -20,7 +21,7 @@ public class CalculatorCommand extends Command {
     @Override
     public boolean execute(String prefix, String[] arguments) {
         if(arguments.length < 1) {
-            addon.msg("§c" + CalculatorAddon.getTranslation("calc.messages.missingProblem"));
+            addon.msg("§c" + I18n.translate("calc.messages.missingProblem"));
             return true;
         }
         try {
@@ -49,7 +50,7 @@ public class CalculatorCommand extends Command {
                 .replace("tan", "§dtan");
             addon.msg(problem + " §a= §n" + solution);
         } catch (NumberFormatException e) {
-            addon.msg("§c" + CalculatorAddon.getTranslation("calc.messages.error"));
+            addon.msg("§c" + I18n.translate("calc.messages.error"));
             e.printStackTrace();
         }
         return true;
@@ -61,7 +62,7 @@ public class CalculatorCommand extends Command {
         symbols.setGroupingSeparator('.');
         symbols.setDecimalSeparator(',');
         formatter.setDecimalFormatSymbols(symbols);
-        formatter.setMaximumFractionDigits(number % 1 == 0 ? 0 : 4);
+        formatter.setMaximumFractionDigits(number % 1 == 0 ? 0 : this.addon.configuration().fractionDigits().get());
 
         return formatter.format(number);
     }

@@ -21,7 +21,7 @@ labyMod {
         author = "RappyTV#6969"
         description = "With this addon you can calculate easy math problems in your minecraft chat. (/calc)"
         minecraftVersion = "*"
-        version = System.getenv().getOrDefault("VERSION", "1.1.0")
+        version = System.getenv().getOrDefault("VERSION", "1.1.5")
     }
 
     minecraft {

@@ -62,7 +62,7 @@ public class CalculatorCommand extends Command {
         symbols.setGroupingSeparator('.');
         symbols.setDecimalSeparator(',');
         formatter.setDecimalFormatSymbols(symbols);
-        formatter.setMaximumFractionDigits(number % 1 == 0 ? 0 : 4);
+        formatter.setMaximumFractionDigits(number % 1 == 0 ? 0 : this.addon.configuration().fractionDigits().get());
 
         return formatter.format(number);
     }
